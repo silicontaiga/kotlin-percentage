@@ -1,0 +1,41 @@
+name: Snapshot
+
+# Every commit on main is published as -SNAPSHOT so consumers can test
+# unreleased fixes without waiting for a release.
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: snapshot
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  publish-snapshot:
+    name: publish -SNAPSHOT
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - uses: actions/setup-java@v6.0.0
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/wrapper-validation@v6.3.0
+
+      - uses: gradle/actions/setup-gradle@v6.3.0
+
+      # The version in gradle.properties is the -SNAPSHOT line; the plugin routes
+      # snapshot versions to Central's snapshot repository, where nothing is signed
+      # or released, so no release gate applies.
+      - name: Publish snapshot
+        run: ./gradlew publishToMavenCentral
+        env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.ORG_GRADLE_PROJECT_mavenCentralUsername }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.ORG_GRADLE_PROJECT_mavenCentralPassword }}
+          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.ORG_GRADLE_PROJECT_signingInMemoryKey }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.ORG_GRADLE_PROJECT_signingInMemoryKeyPassword }}

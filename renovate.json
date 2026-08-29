@@ -1,0 +1,44 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommitsDisabled"
+  ],
+  "timezone": "Europe/Berlin",
+  "schedule": ["before 6am on monday"],
+  "prConcurrentLimit": 5,
+  "labels": ["dependencies"],
+  "lockFileMaintenance": { "enabled": false },
+  "packageRules": [
+    {
+      "description": "Kotlin toolchain moves as one unit — compiler, plugin and stdlib must match.",
+      "matchPackageNames": ["/^org\\.jetbrains\\.kotlin/"],
+      "groupName": "Kotlin"
+    },
+    {
+      "description": "Kotest artifacts are released together and are not independently compatible.",
+      "matchPackageNames": ["/^io\\.kotest/"],
+      "groupName": "Kotest"
+    },
+    {
+      "description": "Build plugins: one PR keeps the noise down and CI proves them together.",
+      "matchManagers": ["gradle"],
+      "matchDepTypes": ["plugin"],
+      "groupName": "Gradle plugins"
+    },
+    {
+      "description": "GitHub Actions are pinned by tag; group them into a single PR.",
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions"
+    },
+    {
+      "description": "Patch updates auto-merge: CI gates every PR with tests, 100% coverage, the ABI dump, ktlint and detekt.",
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    }
+  ],
+  "gradle": { "enabled": true },
+  "gradle-wrapper": { "enabled": true }
+}

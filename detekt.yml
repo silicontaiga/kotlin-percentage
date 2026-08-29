@@ -1,0 +1,45 @@
+# detekt configuration — deviations only.
+#
+# `buildUponDefaultConfig = true` in build.gradle.kts means detekt's default
+# ruleset applies in full; this file records only where kotlin-percentage
+# departs from it, so the diff of an upgrade stays readable.
+#
+# The `formatting` ruleset (detekt-formatting) is deliberately NOT on the
+# classpath: ktlint owns formatting here. Do not add it.
+
+build:
+  # Any finding fails the build, locally and in CI.
+  maxIssues: 0
+
+comments:
+  # Every public declaration carries KDoc, which is what the published API reference
+  # is built from. Explicit API mode makes "public" unambiguous; these rules make
+  # "documented" mechanical instead of a review checklist item.
+  UndocumentedPublicClass:
+    active: true
+    excludes: ['**/test/**']
+  UndocumentedPublicFunction:
+    active: true
+    excludes: ['**/test/**']
+  UndocumentedPublicProperty:
+    active: true
+    excludes: ['**/test/**']
+
+complexity:
+  TooManyFunctions:
+    # The API is deliberately overload-heavy: every construction and scalar operator
+    # exists for Int, Long, Double and BigDecimal, because overloads were chosen over
+    # a generic type. Counting those as complexity would penalise the design decision
+    # rather than flag any real complexity.
+    thresholdInClasses: 40
+    thresholdInFiles: 40
+    thresholdInObjects: 40
+    ignoreDeprecated: true
+    ignorePrivate: true
+    ignoreOverridden: true
+
+style:
+  MagicNumber:
+    # 100 is the domain constant of this library; it lives in a named constant in
+    # production code, while tests are worked examples full of literal figures.
+    excludes: ['**/test/**']

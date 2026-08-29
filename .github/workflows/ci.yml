@@ -1,0 +1,91 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# A superseded run of the same PR is dead work; cancel it.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  # The gate. Branch protection on `main` requires this job.
+  check:
+    name: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - uses: actions/setup-java@v6.0.0
+        with:
+          distribution: temurin
+          java-version: 21
+
+      # Guards against a tampered gradle-wrapper.jar
+      - uses: gradle/actions/wrapper-validation@v6.3.0
+
+      - uses: gradle/actions/setup-gradle@v6.3.0
+
+      # tests, 100% coverage verification, API dump check, ktlint, detekt
+      - name: ./gradlew check
+        run: ./gradlew check
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v7.0.0
+        with:
+          files: build/reports/kover/report.xml
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
+
+      - name: Upload reports
+        if: failure()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: reports
+          path: |
+            build/reports/
+            build/test-results/
+          retention-days: 7
+
+  # Proves the Java 11 bytecode floor rather than assuming it: the same suite,
+  # executed on each supported JVM. Gradle itself always runs on 21; only the
+  # test JVM varies (-PtestJavaVersion).
+  compatibility:
+    name: test on Java ${{ matrix.java }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [11, 17]
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - uses: actions/setup-java@v6.0.0
+        with:
+          distribution: temurin
+          java-version: |
+            ${{ matrix.java }}
+            21
+
+      - uses: gradle/actions/setup-gradle@v6.3.0
+
+      - name: ./gradlew test on Java ${{ matrix.java }}
+        run: >-
+          ./gradlew test
+          -PtestJavaVersion=${{ matrix.java }}
+          -Porg.gradle.java.installations.fromEnv=JAVA_HOME_11_X64,JAVA_HOME_17_X64,JAVA_HOME_21_X64
+
+      - name: Upload reports
+        if: failure()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: reports-java-${{ matrix.java }}
+          path: |
+            build/reports/tests/
+            build/test-results/
+          retention-days: 7
