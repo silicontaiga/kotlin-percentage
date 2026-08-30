@@ -4,6 +4,9 @@
 [versions]
 kotlin = "2.4.10"
 kotest = "6.2.4"
+# Drives a real kotlinc over source snippets, so the API's "this must not compile"
+# guarantees are tested rather than assumed. Test-only; never on the consumer classpath.
+kotlin-compile-testing = "0.13.0"
 kover = "0.9.9"
 binary-compatibility-validator = "0.18.1"
 ktlint-gradle = "14.2.0"
@@ -17,6 +20,10 @@ maven-publish = "0.37.0"
 kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
 kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
 kotest-property = { module = "io.kotest:kotest-property", version.ref = "kotest" }
+kotlin-compile-testing = { module = "dev.zacsweers.kctfork:core", version.ref = "kotlin-compile-testing" }
+# Pinned to this project's own Kotlin version: the negative compilation tests must be judged
+# by the same compiler that builds the library, not the older one kctfork happens to depend on.
+kotlin-compiler-embeddable = { module = "org.jetbrains.kotlin:kotlin-compiler-embeddable", version.ref = "kotlin" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

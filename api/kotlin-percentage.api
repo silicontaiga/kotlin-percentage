@@ -1,0 +1,103 @@
+public final class io/github/silicontaiga/percentage/Percentage : java/lang/Comparable {
+	public static final field Companion Lio/github/silicontaiga/percentage/Percentage$Companion;
+	public synthetic fun <init> (Ljava/math/BigDecimal;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun compareTo (Lio/github/silicontaiga/percentage/Percentage;)I
+	public synthetic fun compareTo (Ljava/lang/Object;)I
+	public final fun dec ()Lio/github/silicontaiga/percentage/Percentage;
+	public final fun div (D)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun div (DLjava/math/MathContext;)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun div (I)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun div (ILjava/math/MathContext;)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun div (J)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun div (JLjava/math/MathContext;)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun div (Lio/github/silicontaiga/percentage/Percentage;)Ljava/math/BigDecimal;
+	public final fun div (Lio/github/silicontaiga/percentage/Percentage;Ljava/math/MathContext;)Ljava/math/BigDecimal;
+	public final fun div (Ljava/math/BigDecimal;)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun div (Ljava/math/BigDecimal;Ljava/math/MathContext;)Lio/github/silicontaiga/percentage/Percentage;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getPerCentMille ()Ljava/math/BigDecimal;
+	public final fun getPerMille ()Ljava/math/BigDecimal;
+	public final fun getPercentValue ()Ljava/math/BigDecimal;
+	public final fun getPermyriad ()Ljava/math/BigDecimal;
+	public final fun getRatio ()Ljava/math/BigDecimal;
+	public fun hashCode ()I
+	public final fun inc ()Lio/github/silicontaiga/percentage/Percentage;
+	public final fun minus (Lio/github/silicontaiga/percentage/Percentage;)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun of (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+	public final fun plus (Lio/github/silicontaiga/percentage/Percentage;)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun times (D)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun times (I)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun times (J)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun times (Lio/github/silicontaiga/percentage/Percentage;)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun times (Ljava/math/BigDecimal;)Lio/github/silicontaiga/percentage/Percentage;
+	public fun toString ()Ljava/lang/String;
+	public final fun unaryMinus ()Lio/github/silicontaiga/percentage/Percentage;
+}
+
+public final class io/github/silicontaiga/percentage/Percentage$Companion {
+	public final fun changeBetween (Ljava/math/BigDecimal;Ljava/math/BigDecimal;)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun changeBetween (Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/MathContext;)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromPerCentMille (D)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromPerCentMille (I)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromPerCentMille (J)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromPerCentMille (Ljava/math/BigDecimal;)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromPerMille (D)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromPerMille (I)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromPerMille (J)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromPerMille (Ljava/math/BigDecimal;)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromPermyriad (D)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromPermyriad (I)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromPermyriad (J)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromPermyriad (Ljava/math/BigDecimal;)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromRatio (D)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromRatio (I)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromRatio (J)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun fromRatio (Ljava/math/BigDecimal;)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun of (D)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun of (I)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun of (J)Lio/github/silicontaiga/percentage/Percentage;
+	public final fun of (Ljava/math/BigDecimal;)Lio/github/silicontaiga/percentage/Percentage;
+}
+
+public final class io/github/silicontaiga/percentage/PercentageAggregationKt {
+	public static final fun average (Ljava/lang/Iterable;)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun average (Ljava/lang/Iterable;Ljava/math/MathContext;)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun sum (Ljava/lang/Iterable;)Lio/github/silicontaiga/percentage/Percentage;
+}
+
+public final class io/github/silicontaiga/percentage/PercentageApplicationKt {
+	public static final fun decreasedBy (Ljava/math/BigDecimal;Lio/github/silicontaiga/percentage/Percentage;)Ljava/math/BigDecimal;
+	public static final fun increasedBy (Ljava/math/BigDecimal;Lio/github/silicontaiga/percentage/Percentage;)Ljava/math/BigDecimal;
+}
+
+public final class io/github/silicontaiga/percentage/PercentageArithmeticKt {
+	public static final fun times (DLio/github/silicontaiga/percentage/Percentage;)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun times (ILio/github/silicontaiga/percentage/Percentage;)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun times (JLio/github/silicontaiga/percentage/Percentage;)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun times (Ljava/math/BigDecimal;Lio/github/silicontaiga/percentage/Percentage;)Lio/github/silicontaiga/percentage/Percentage;
+}
+
+public final class io/github/silicontaiga/percentage/PercentageDerivationKt {
+	public static final fun asPercentageOf (Ljava/math/BigDecimal;Ljava/math/BigDecimal;)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun asPercentageOf (Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/MathContext;)Lio/github/silicontaiga/percentage/Percentage;
+}
+
+public final class io/github/silicontaiga/percentage/PercentageLiteralsKt {
+	public static final fun getPerCentMille (D)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun getPerCentMille (I)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun getPerCentMille (J)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun getPerCentMille (Ljava/math/BigDecimal;)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun getPerMille (D)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun getPerMille (I)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun getPerMille (J)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun getPerMille (Ljava/math/BigDecimal;)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun getPercent (D)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun getPercent (I)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun getPercent (J)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun getPercent (Ljava/math/BigDecimal;)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun getPermyriad (D)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun getPermyriad (I)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun getPermyriad (J)Lio/github/silicontaiga/percentage/Percentage;
+	public static final fun getPermyriad (Ljava/math/BigDecimal;)Lio/github/silicontaiga/percentage/Percentage;
+}
+

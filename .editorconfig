@@ -9,13 +9,14 @@ indent_style = space
 indent_size = 4
 
 [*.{kt,kts}]
-# Matches kotlin.code.style=official in gradle.properties, so IntelliJ's formatter
-# and ktlint agree instead of undoing each other. (ktlint's own `ktlint_official`
-# style is explicitly documented as incompatible with the IDE formatters.)
-ktlint_code_style = intellij_idea
+ij_kotlin_code_style_defaults = KOTLIN_OFFICIAL
+
+#  Disable wildcard imports entirely
+ij_kotlin_name_count_to_use_star_import = 2147483647
+ij_kotlin_name_count_to_use_star_import_for_members = 2147483647
+ij_kotlin_packages_to_use_import_on_demand = unset
+
 max_line_length = 140
-ij_kotlin_allow_trailing_comma = true
-ij_kotlin_allow_trailing_comma_on_call_site = true
 
 [src/test/kotlin/**.kt]
 # A Kotest spec is `class FooTest : FunSpec({ … })`. Because the lambda is

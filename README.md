@@ -9,8 +9,7 @@
 
 Exact, explicit percentage arithmetic for Kotlin/JVM.
 
-Nothing is published yet; the repository currently holds the build and pipeline only. The first
-release will be `0.1.0`, and while the version stays below `1.0.0` the API may still change — see
+While the version stays below `1.0.0` the API may still change — see
 [versioning](CONTRIBUTING.md#releases).
 
 ## Usage
@@ -28,19 +27,43 @@ Percentage.changeBetween(from = 100.toBigDecimal(), to = 80.toBigDecimal())   //
 listOf(10.percent, 20.percent, 30.percent).sum()             // 60%
 ```
 
-Both scales are readable, and each accessor is named for the scale it returns:
+A `Percentage` stores the ratio. Every other scale is a named factory going in and an accessor of the
+same name coming out, so no number crosses the boundary without saying which scale it is on:
 
 ```kotlin
-50.percent.percentage        // 50
-50.percent.ratio             // 0.5
-Percentage.of(50) == Percentage.fromRatio(0.5)   // true
+50.percent.ratio             // 0.5   — the stored scale
+50.percent.percentValue      // 50
+50.percent.perMille          // 500
+50.percent.permyriad         // 5000
+50.percent.perCentMille      // 50000
 ```
+
+The finer scales have literals and factories of their own, so a rate quoted in basis points enters
+under the name it was quoted in:
+
+```kotlin
+25.perMille                       // 2.5%
+250.permyriad                     // 2.5%   — 250 basis points
+2500.perCentMille                 // 2.5%
+Percentage.fromPermyriad(250)     // 2.5%
+
+Percentage.of(50) == Percentage.fromRatio(0.5)       // true
+250.permyriad == 2.5.percent                         // true — the scale is a spelling, not an identity
+```
+
+| scale | unit | 50% is | reached from the ratio by |
+|---|---|---|---|
+| ratio | — | `0.5` | stored as-is |
+| per cent | `%` | `50` | ×100 |
+| per mille | `‰` | `500` | ×1000 |
+| permyriad (basis point) | `‱` | `5000` | ×10000 |
+| per cent mille | `pcm` | `50000` | ×100000 |
 
 ## Exact arithmetic
 
 Values are backed by `java.math.BigDecimal`. Construction, addition, subtraction, negation,
-multiplication and application are exact — applying a percentage divides by 100, which only moves
-the decimal point:
+multiplication and application are exact — every scale conversion only moves the decimal point, and
+applying a percentage multiplies the base by the stored ratio:
 
 ```kotlin
 100.toBigDecimal().decreasedBy(20.percent).increasedBy(20.percent)   // 96
@@ -88,11 +111,11 @@ Both readings of an ambiguous intent stay expressible, and each one says which i
 
 | | |
 |---|---|
-| Construct | `Percentage.of(50)`, `50.percent`, `12.5.percent`, `Percentage.fromRatio(0.5)` — from `Int`, `Long`, `Double` or `BigDecimal` |
-| Read | `p.percentage`, `p.ratio` |
+| Construct | `Percentage.of(50)`, `50.percent`, `12.5.percent`, `Percentage.fromRatio(0.5)`, `25.perMille`, `250.permyriad`, `2500.perCentMille` — each from `Int`, `Long`, `Double` or `BigDecimal` |
+| Read | `p.ratio`, `p.percentValue`, `p.perMille`, `p.permyriad`, `p.perCentMille` |
 | Combine | `p + q`, `p - q`, `-p`, `p * 2`, `p / 2`, `p++`, `p * q` (→ `Percentage`), `p / q` (→ `BigDecimal`) |
-| Apply | `p.of(n)`, `n.increasedBy(p)`, `n.decreasedBy(p)` |
-| Derive | `n.asPercentageOf(whole)`, `Percentage.changeBetween(from, to)` |
+| Apply | `p.of(base)`, `base.increasedBy(p)`, `base.decreasedBy(p)` |
+| Derive | `n.asPercentageOf(base)`, `Percentage.changeBetween(from, to)` |
 | Aggregate | `sum()`, `average()`, `average(context)` over any `Iterable<Percentage>` |
 | Compare | `Comparable<Percentage>`; `equals`, `hashCode` and `compareTo` agree on mathematical value |
 
@@ -107,6 +130,10 @@ dependencies {
 }
 ```
 
+The Maven Central badge above shows the current release. Every push to `main` also publishes a
+`-SNAPSHOT` to Central's snapshot repository, so an unreleased fix can be tried without waiting for
+a release.
+
 No third-party runtime dependencies. Java 11 bytecode, so it runs on any JVM from 11 up, and on
 Android with desugaring. The jar declares `Automatic-Module-Name: io.github.silicontaiga.percentage`.
 
@@ -114,11 +141,11 @@ Android with desugaring. The jar declares `Automatic-Module-Name: io.github.sili
 
 - **Formatting and parsing.** `toString()` is debug output: locale-independent, `"12.5%"`. Use
   `java.text` for display. Note that `NumberFormat.getPercentInstance` multiplies by 100, so feed
-  it `ratio`, never `percentage`.
+  it `ratio`, never `percentValue`.
 - **Range validation.** There is no bounded 0–100% type; enforce domain ranges at your boundary.
 - **Multiplatform.** JVM only, because the exactness comes from `java.math`.
-- **Serialization.** Serialize via the `percentage`/`ratio` accessors and the `of`/`fromRatio`
-  factories.
+- **Serialization.** Serialize via whichever scale's accessor and factory suit you; `ratio` and
+  `fromRatio` are the stored scale, so they round-trip with no conversion at all.
 
 ## Building
 

@@ -18,3 +18,9 @@ out/
 # Signing material — must never be committed
 *.asc
 *.gpg
+
+# Agents
+AGENTS.md
+CLAUDE.md
+tinkerspace
+/.claude/
