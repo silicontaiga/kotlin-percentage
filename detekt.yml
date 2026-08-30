@@ -39,6 +39,13 @@ complexity:
     ignoreOverridden: true
 
 style:
+  MaxLineLength:
+    # `.editorconfig` sets max_line_length = 140, which is what ktlint and the IntelliJ
+    # formatter both read. detekt does not read `.editorconfig` and defaults to 120, so
+    # without this the two tools actively fight: `ktlintFormat` joins a wrapped signature
+    # up to 140 columns and `:detekt` then fails the very line ktlint just produced.
+    maxLineLength: 140
+
   MagicNumber:
     # 100 is the domain constant of this library; it lives in a named constant in
     # production code, while tests are worked examples full of literal figures.
