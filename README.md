@@ -130,12 +130,34 @@ dependencies {
 }
 ```
 
-The Maven Central badge above shows the current release. Every push to `main` also publishes a
-`-SNAPSHOT` to Central's snapshot repository, so an unreleased fix can be tried without waiting for
-a release.
+The Maven Central badge above shows the current release.
 
 No third-party runtime dependencies. Java 11 bytecode, so it runs on any JVM from 11 up, and on
 Android with desugaring. The jar declares `Automatic-Module-Name: io.github.silicontaiga.percentage`.
+
+### Snapshots
+
+Every push to `main` publishes a `-SNAPSHOT`, so a fix can be tried before it is released.
+
+Snapshots are **not** on Maven Central proper: they are not indexed by its search and are not
+mirrored to `repo1.maven.org`, so looking there will not find them. They live in a separate
+repository, which has to be declared:
+
+```kotlin
+repositories {
+    mavenCentral()
+    maven("https://central.sonatype.com/repository/maven-snapshots/")
+}
+
+dependencies {
+    implementation("io.github.silicontaiga:kotlin-percentage:0.1.0-SNAPSHOT")
+}
+```
+
+The snapshot line is always `VERSION_NAME` in [`gradle.properties`](gradle.properties): the release
+workflow overrides that value only for a tagged release, so `main` always carries the next
+`-SNAPSHOT`. Gradle caches snapshots for 24 hours — pass `--refresh-dependencies` to force a
+re-resolve sooner.
 
 ## Out of scope
 
@@ -163,4 +185,4 @@ failing test first.
 
 ## License
 
-[Apache-2.0](LICENSE) © Silicon Taiga
+[Apache-2.0](LICENSE)
