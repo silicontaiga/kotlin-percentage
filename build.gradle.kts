@@ -52,6 +52,16 @@ tasks.jar {
     }
 }
 
+// Apache-2.0 section 4(a) asks that a copy of the license travel with the Work, not
+// just a pointer to it, so every published jar — main, sources and javadoc — carries
+// one at META-INF/LICENSE. It is also what a consumer shading this library reads to
+// assemble their own attribution bundle.
+tasks.withType<org.gradle.jvm.tasks.Jar>().configureEach {
+    metaInf {
+        from(rootProject.file("LICENSE"))
+    }
+}
+
 // ---------------------------------------------------------------------------
 // Dependencies — the library has no third-party runtime dependencies, by design
 // ---------------------------------------------------------------------------

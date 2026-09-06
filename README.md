@@ -122,6 +122,14 @@ Both readings of an ambiguous intent stay expressible, and each one says which i
 Negative percentages and percentages above 100 are valid. Instances are immutable and
 thread-safe. `p++` and `p--` step by one percentage point.
 
+The table above is a summary; the generated API reference documents every overload, its rounding
+and what it throws. It is published per release, so a version can be read at the version you
+actually depend on:
+
+- [Latest release](https://silicontaiga.github.io/kotlin-percentage/latest/)
+- A specific one at `https://silicontaiga.github.io/kotlin-percentage/<version>/` — for example
+  [0.1.0](https://silicontaiga.github.io/kotlin-percentage/0.1.0/)
+
 ## Install
 
 ```kotlin
@@ -150,7 +158,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.silicontaiga:kotlin-percentage:0.1.0-SNAPSHOT")
+    implementation("io.github.silicontaiga:kotlin-percentage:0.1.1-SNAPSHOT")
 }
 ```
 
