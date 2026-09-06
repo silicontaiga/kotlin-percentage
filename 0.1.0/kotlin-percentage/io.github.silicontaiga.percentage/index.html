@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>io.github.silicontaiga.percentage</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../index.html" tabindex="1">
+                    kotlin-percentage
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
+                        data-filter=":/main">jvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/main"
+                                       data-filter=":/main"/>
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    kotlin-percentage
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="package" id="content" pageIds="kotlin-percentage::io.github.silicontaiga.percentage////PointingToDeclaration//-251573632">
+  <div class="breadcrumbs"><a href="../../index.html">kotlin-percentage</a><span class="delimiter">/</span><span class="current">io.github.silicontaiga.percentage</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button><button class="section-tab" data-togglable="PROPERTY,EXTENSION_PROPERTY">Properties</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="tableheader">Types</h2>
+        <div class="table"><a data-name="-1832640954%2FClasslikes%2F-251573632" anchor-label="Percentage" id="-1832640954%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-percentage/index.html"><span><span>Percentage</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1832640954%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="-percentage/index.html">Percentage</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-comparable/index.html">Comparable</a><span class="token operator">&lt;</span><a href="-percentage/index.html">Percentage</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">A quantity expressed per hundred: <code class="lang-kotlin">50%</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="EXTENSION_PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="641466190%2FProperties%2F-251573632" anchor-label="percent" id="641466190%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="percent.html"><span><span>percent</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="641466190%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a><span class="token punctuation">.</span><a href="percent.html">percent</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as a percent value, so <code class="lang-kotlin">&quot;12.5&quot;.toBigDecimal().percent</code> is <code class="lang-kotlin">12.5%</code>.</p></div><div class="symbol monospace"><span class="token keyword">val </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">.</span><a href="percent.html">percent</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as a percent value, so <code class="lang-kotlin">12.5.percent</code> is <code class="lang-kotlin">12.5%</code>.</p></div><div class="symbol monospace"><span class="token keyword">val </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">.</span><a href="percent.html">percent</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as a percent value, so <code class="lang-kotlin">50.percent</code> is <code class="lang-kotlin">50%</code>.</p></div><div class="symbol monospace"><span class="token keyword">val </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">.</span><a href="percent.html">percent</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as a percent value, so <code class="lang-kotlin">50L.percent</code> is <code class="lang-kotlin">50%</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1729534400%2FProperties%2F-251573632" anchor-label="perCentMille" id="1729534400%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="per-cent-mille.html"><span>per</span><wbr></wbr><span>Cent</span><wbr></wbr><span><span>Mille</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1729534400%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a><span class="token punctuation">.</span><a href="per-cent-mille.html">perCentMille</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as parts per hundred thousand, so <code class="lang-kotlin">2500.toBigDecimal().perCentMille</code> is <code class="lang-kotlin">2.5%</code>.</p></div><div class="symbol monospace"><span class="token keyword">val </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">.</span><a href="per-cent-mille.html">perCentMille</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as parts per hundred thousand, so <code class="lang-kotlin">2500.0.perCentMille</code> is <code class="lang-kotlin">2.5%</code>.</p></div><div class="symbol monospace"><span class="token keyword">val </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">.</span><a href="per-cent-mille.html">perCentMille</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as parts per hundred thousand, so <code class="lang-kotlin">2500.perCentMille</code> is <code class="lang-kotlin">2.5%</code>.</p></div><div class="symbol monospace"><span class="token keyword">val </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">.</span><a href="per-cent-mille.html">perCentMille</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as parts per hundred thousand, so <code class="lang-kotlin">2500L.perCentMille</code> is <code class="lang-kotlin">2.5%</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1997192512%2FProperties%2F-251573632" anchor-label="perMille" id="1997192512%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="per-mille.html"><span>per</span><wbr></wbr><span><span>Mille</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1997192512%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a><span class="token punctuation">.</span><a href="per-mille.html">perMille</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as parts per thousand, so <code class="lang-kotlin">25.toBigDecimal().perMille</code> is <code class="lang-kotlin">2.5%</code>.</p></div><div class="symbol monospace"><span class="token keyword">val </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">.</span><a href="per-mille.html">perMille</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as parts per thousand, so <code class="lang-kotlin">25.0.perMille</code> is <code class="lang-kotlin">2.5%</code>.</p></div><div class="symbol monospace"><span class="token keyword">val </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">.</span><a href="per-mille.html">perMille</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as parts per thousand, so <code class="lang-kotlin">25.perMille</code> is <code class="lang-kotlin">2.5%</code>.</p></div><div class="symbol monospace"><span class="token keyword">val </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">.</span><a href="per-mille.html">perMille</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as parts per thousand, so <code class="lang-kotlin">25L.perMille</code> is <code class="lang-kotlin">2.5%</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-439890290%2FProperties%2F-251573632" anchor-label="permyriad" id="-439890290%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="permyriad.html"><span><span>permyriad</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-439890290%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a><span class="token punctuation">.</span><a href="permyriad.html">permyriad</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as parts per ten thousand, so <code class="lang-kotlin">250.toBigDecimal().permyriad</code> is <code class="lang-kotlin">2.5%</code>.</p></div><div class="symbol monospace"><span class="token keyword">val </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">.</span><a href="permyriad.html">permyriad</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as parts per ten thousand, so <code class="lang-kotlin">250.0.permyriad</code> is <code class="lang-kotlin">2.5%</code> — 250 basis points.</p></div><div class="symbol monospace"><span class="token keyword">val </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">.</span><a href="permyriad.html">permyriad</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as parts per ten thousand, so <code class="lang-kotlin">250.permyriad</code> is <code class="lang-kotlin">2.5%</code> — 250 basis points.</p></div><div class="symbol monospace"><span class="token keyword">val </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">.</span><a href="permyriad.html">permyriad</a><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">This number read as parts per ten thousand, so <code class="lang-kotlin">250L.permyriad</code> is <code class="lang-kotlin">2.5%</code> — 250 basis points.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="EXTENSION_FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="1182596770%2FFunctions%2F-251573632" anchor-label="asPercentageOf" id="1182596770%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="as-percentage-of.html"><span>as</span><wbr></wbr><span>Percentage</span><wbr></wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1182596770%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a><span class="token punctuation">.</span><a href="as-percentage-of.html"><span class="token function">asPercentageOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">base<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">Returns this number's share of <a href="as-percentage-of.html">base</a>, so <code class="lang-kotlin">50.toBigDecimal().asPercentageOf(250.toBigDecimal())</code> is <code class="lang-kotlin">20%</code>.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a><span class="token punctuation">.</span><a href="as-percentage-of.html"><span class="token function">asPercentageOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">base<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a><span class="token punctuation">, </span></span><span class="parameter ">context<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/MathContext.html">MathContext</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">Returns this number's share of <a href="as-percentage-of.html">base</a>, rounding to <a href="as-percentage-of.html">context</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-283450107%2FFunctions%2F-251573632" anchor-label="average" id="-283450107%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="average.html"><span><span>average</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-283450107%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-iterable/index.html">Iterable</a><span class="token operator">&lt;</span><a href="-percentage/index.html">Percentage</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="average.html"><span class="token function">average</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">Returns the unweighted arithmetic mean of these percentages, so <code class="lang-kotlin">listOf(10.percent, 20.percent, 30.percent).average()</code> is <code class="lang-kotlin">20%</code>.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-iterable/index.html">Iterable</a><span class="token operator">&lt;</span><a href="-percentage/index.html">Percentage</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="average.html"><span class="token function">average</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/MathContext.html">MathContext</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">Returns the unweighted arithmetic mean of these percentages, rounding to <a href="average.html">context</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1407334335%2FFunctions%2F-251573632" anchor-label="decreasedBy" id="1407334335%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="decreased-by.html"><span>decreased</span><wbr></wbr><span><span>By</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1407334335%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a><span class="token punctuation">.</span><a href="decreased-by.html"><span class="token function">decreasedBy</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">percentage<span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a></div><div class="brief "><p class="paragraph">Returns this number decreased by <a href="decreased-by.html">percentage</a>, so <code class="lang-kotlin">250.toBigDecimal().decreasedBy(20.percent)</code> is <code class="lang-kotlin">200</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="53342051%2FFunctions%2F-251573632" anchor-label="increasedBy" id="53342051%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="increased-by.html"><span>increased</span><wbr></wbr><span><span>By</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="53342051%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a><span class="token punctuation">.</span><a href="increased-by.html"><span class="token function">increasedBy</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">percentage<span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a></div><div class="brief "><p class="paragraph">Returns this number increased by <a href="increased-by.html">percentage</a>, so <code class="lang-kotlin">250.toBigDecimal().increasedBy(20.percent)</code> is <code class="lang-kotlin">300</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1271625156%2FFunctions%2F-251573632" anchor-label="sum" id="-1271625156%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="sum.html"><span><span>sum</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1271625156%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-iterable/index.html">Iterable</a><span class="token operator">&lt;</span><a href="-percentage/index.html">Percentage</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="sum.html"><span class="token function">sum</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">Returns the sum of these percentages, so <code class="lang-kotlin">listOf(10.percent, 20.percent, 30.percent).sum()</code> is <code class="lang-kotlin">60%</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-463420210%2FFunctions%2F-251573632" anchor-label="times" id="-463420210%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="times.html"><span><span>times</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-463420210%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a><span class="token punctuation">.</span><a href="times.html"><span class="token function">times</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">percentage<span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">Returns <a href="times.html">percentage</a> scaled by this number, so <code class="lang-kotlin">2.toBigDecimal() * 20.percent</code> is <code class="lang-kotlin">40%</code>. Exact.</p></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">.</span><a href="times.html"><span class="token function">times</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">percentage<span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">Returns <a href="times.html">percentage</a> scaled by this number, so <code class="lang-kotlin">1.5 * 20.percent</code> is <code class="lang-kotlin">30%</code>. Exact.</p></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">.</span><a href="times.html"><span class="token function">times</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">percentage<span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">Returns <a href="times.html">percentage</a> scaled by this number, so <code class="lang-kotlin">2 * 20.percent</code> is <code class="lang-kotlin">40%</code>. Exact.</p></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">.</span><a href="times.html"><span class="token function">times</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">percentage<span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-percentage/index.html">Percentage</a></div><div class="brief "><p class="paragraph">Returns <a href="times.html">percentage</a> scaled by this number, so <code class="lang-kotlin">2L * 20.percent</code> is <code class="lang-kotlin">40%</code>. Exact.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
