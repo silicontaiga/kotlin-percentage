@@ -8,7 +8,7 @@ kotest = "6.2.4"
 # guarantees are tested rather than assumed. Test-only; never on the consumer classpath.
 kotlin-compile-testing = "0.13.0"
 kover = "0.9.9"
-binary-compatibility-validator = "0.18.1"
+binary-compatibility-validator = "0.18.2"
 ktlint-gradle = "14.2.0"
 # The ktlint engine itself, pinned independently of the Gradle plugin that drives it.
 ktlint = "1.8.0"
