@@ -2,7 +2,7 @@
 # Renovate groups updates from this file into one PR per family; patch updates auto-merge on green CI.
 
 [versions]
-kotlin = "2.4.10"
+kotlin = "2.4.20"
 kotest = "6.2.4"
 # Drives a real kotlinc over source snippets, so the API's "this must not compile"
 # guarantees are tested rather than assumed. Test-only; never on the consumer classpath.
