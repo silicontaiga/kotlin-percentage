@@ -2,13 +2,13 @@
 # Renovate groups updates from this file into one PR per family; patch updates auto-merge on green CI.
 
 [versions]
-kotlin = "2.4.10"
+kotlin = "2.4.20"
 kotest = "6.2.4"
 # Drives a real kotlinc over source snippets, so the API's "this must not compile"
 # guarantees are tested rather than assumed. Test-only; never on the consumer classpath.
 kotlin-compile-testing = "0.13.0"
 kover = "0.9.9"
-binary-compatibility-validator = "0.18.1"
+binary-compatibility-validator = "0.18.2"
 ktlint-gradle = "14.2.0"
 # The ktlint engine itself, pinned independently of the Gradle plugin that drives it.
 ktlint = "1.8.0"
