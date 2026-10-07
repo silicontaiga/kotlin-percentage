@@ -44,7 +44,7 @@ jobs:
           distribution: temurin
           java-version: 25
 
-      - uses: gradle/actions/setup-gradle@v6.3.0
+      - uses: gradle/actions/setup-gradle@v6.4.0
 
       - name: Generate API documentation
         run: ./gradlew dokkaGeneratePublicationHtml -PVERSION_NAME=${{ inputs.version }}
